@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nifty 50 Watchlist</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background: linear-gradient(135deg, #a25050,   #7c9ae4);      }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .add-stock {
+            margin-bottom: 20px;
+        }
+        select, button {
+            padding: 8px;
+            margin: 5px;
+            font-size: 16px;
+        }
+        button {
+            background: linear-gradient(90deg, #ff6f61, #6b48ff);
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #005f73;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #84438d;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Nifty 50 Watchlist</h1>
+    <div class="container">
+        <div class="add-stock">
+            <select id="stockSymbol">
+                <option value="" disabled selected>Select a stock</option>
+                <option value="ADANIENT|Adani Enterprises Ltd.">Adani Enterprises Ltd.</option>
+                <option value="ADANIPORTS|Adani Ports and SEZ Ltd.">Adani Ports and SEZ Ltd.</option>
+                <option value="APOLLOHOSP|Apollo Hospitals Enterprise Ltd.">Apollo Hospitals Enterprise Ltd.</option>
+                <option value="ASIANPAINT|Asian Paints Ltd.">Asian Paints Ltd.</option>
+                <option value="AXISBANK|Axis Bank Ltd.">Axis Bank Ltd.</option>
+                <option value="BAJAJ-AUTO|Bajaj Auto Ltd.">Bajaj Auto Ltd.</option>
+                <option value="BAJFINANCE|Bajaj Finance Ltd.">Bajaj Finance Ltd.</option>
+                <option value="BAJAJFINSV|Bajaj Finserv Ltd.">Bajaj Finserv Ltd.</option>
+                <option value="BEL|Bharat Electronics Ltd.">Bharat Electronics Ltd.</option>
+                <option value="BPCL|Bharat Petroleum Corporation Ltd.">Bharat Petroleum Corporation Ltd.</option>
+                <option value="BHARTIARTL|Bharti Airtel Ltd.">Bharti Airtel Ltd.</option>
+                <option value="BRITANNIA|Britannia Industries Ltd.">Britannia Industries Ltd.</option>
+                <option value="CIPLA|Cipla Ltd.">Cipla Ltd.</option>
+                <option value="COALINDIA|Coal India Ltd.">Coal India Ltd.</option>
+                <option value="DIVISLAB|Divi's Laboratories Ltd.">Divi's Laboratories Ltd.</option>
+                <option value="DRREDDY|Dr. Reddy's Laboratories Ltd.">Dr. Reddy's Laboratories Ltd.</option>
+                <option value="EICHERMOT|Eicher Motors Ltd.">Eicher Motors Ltd.</option>
+                <option value="GRASIM|Grasim Industries Ltd.">Grasim Industries Ltd.</option>
+                <option value="HCLTECH|HCL Technologies Ltd.">HCL Technologies Ltd.</option>
+                <option value="HDFCBANK|HDFC Bank Ltd.">HDFC Bank Ltd.</option>
+                <option value="HDFCLIFE|HDFC Life Insurance Co Ltd.">HDFC Life Insurance Co Ltd.</option>
+                <option value="HEROMOTOCO|Hero MotoCorp Ltd.">Hero MotoCorp Ltd.</option>
+                <option value="HINDALCO|Hindalco Industries Ltd.">Hindalco Industries Ltd.</option>
+                <option value="HINDUNILVR|Hindustan Unilever Ltd.">Hindustan Unilever Ltd.</option>
+                <option value="ICICIBANK|ICICI Bank Ltd.">ICICI Bank Ltd.</option>
+                <option value="INDUSINDBK|IndusInd Bank Ltd.">IndusInd Bank Ltd.</option>
+                <option value="INFY|Infosys Ltd.">Infosys Ltd.</option>
+                <option value="ITC|ITC Ltd.">ITC Ltd.</option>
+                <option value="JSWSTEEL|JSW Steel Ltd.">JSW Steel Ltd.</option>
+                <option value="JIOFIN|Jio Financial Services Ltd.">Jio Financial Services Ltd.</option>
+                <option value="KOTAKBANK|Kotak Mahindra Bank Ltd.">Kotak Mahindra Bank Ltd.</option>
+                <option value="LT|Larsen & Toubro Ltd.">Larsen & Toubro Ltd.</option>
+                <option value="LTIM|LTIMindtree Ltd.">LTIMindtree Ltd.</option>
+                <option value="M&M|Mahindra & Mahindra Ltd.">Mahindra & Mahindra Ltd.</option>
+                <option value="MARUTI|Maruti Suzuki India Ltd.">Maruti Suzuki India Ltd.</option>
+                <option value="NESTLEIND|Nestle India Ltd.">Nestle India Ltd.</option>
+                <option value="NTPC|NTPC Ltd.">NTPC Ltd.</option>
+                <option value="ONGC|Oil & Natural Gas Corporation Ltd.">Oil & Natural Gas Corporation Ltd.</option>
+                <option value="POWERGRID|Power Grid Corporation of India Ltd.">Power Grid Corporation of India Ltd.</option>
+                <option value="RELIANCE|Reliance Industries Ltd.">Reliance Industries Ltd.</option>
+                <option value="SBILIFE|SBI Life Insurance Company Ltd.">SBI Life Insurance Company Ltd.</option>
+                <option value="SBIN|State Bank of India">State Bank of India</option>
+                <option value="SUNPHARMA|Sun Pharmaceutical Industries Ltd.">Sun Pharmaceutical Industries Ltd.</option>
+                <option value="TATACONSUM|Tata Consumer Products Ltd.">Tata Consumer Products Ltd.</option>
+                <option value="TATAMOTORS|Tata Motors Ltd.">Tata Motors Ltd.</option>
+                <option value="TATASTEEL|Tata Steel Ltd.">Tata Steel Ltd.</option>
+                <option value="TCS|Tata Consultancy Services Ltd.">Tata Consultancy Services Ltd.</option>
+                <option value="TECHM|Tech Mahindra Ltd.">Tech Mahindra Ltd.</option>
+                <option value="TITAN|Titan Company Ltd.">Titan Company Ltd.</option>
+                <option value="ULTRACEMCO|UltraTech Cement Ltd.">UltraTech Cement Ltd.</option>
+            </select>
+            <button onclick="addStock()">Add to Watchlist</button>
+        </div>
+        <table id="watchlistTable">
+            <thead>
+                <tr>
+                    <th>Symbol</th>
+                    <th>Company Name</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="watchlistBody">
+                <!-- Initial sample stocks -->
+                <tr>
+                    <td>RELIANCE</td>
+                    <td>Reliance Industries Ltd.</td>
+                    <td><button onclick="removeStock(this)">Remove</button></td>
+                </tr>
+                <tr>
+                    <td>TCS</td>
+                    <td>Tata Consultancy Services Ltd.</td>
+                    <td><button onclick="removeStock(this)">Remove</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        function addStock() {
+            let stockSelect = document.getElementById("stockSymbol");
+            let watchlistBody = document.getElementById("watchlistBody");
+
+            if (!stockSelect.value) {
+                alert("Please select a stock.");
+                return;
+            }
+
+            let [symbol, company] = stockSelect.value.split("|");
+
+            // Check if stock already exists
+            let rows = watchlistBody.getElementsByTagName("tr");
+            for (let row of rows) {
+                if (row.cells[0].textContent === symbol) {
+                    alert("Stock already in watchlist!");
+                    return;
+                }
+            }
+
+            // Add new row
+            let row = document.createElement("tr");
+            row.innerHTML = `
+                <td>${symbol}</td>
+                <td>${company}</td>
+                <td><button onclick="removeStock(this)">Remove</button></td>
+            `;
+            watchlistBody.appendChild(row);
+
+            // Clear selection
+            stockSelect.value = "";
+            alert("Stock added to watchlist!");
+        }
+
+        function removeStock(button) {
+            let row = button.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+            alert("Stock removed from watchlist!");
+        }
+    </script>
+</body>
+</html>
